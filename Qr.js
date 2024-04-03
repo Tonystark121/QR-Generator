@@ -3,6 +3,7 @@ const sizes = document.getElementById('sizes');
 const generateBtn = document.getElementById('generateBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 const qrContainer = document.querySelector('.qr-body');
+const errorContainer = document.querySelector('#error');
 
 let size = sizes.value;
 generateBtn.addEventListener('click',(e)=>{
@@ -32,9 +33,11 @@ function isEmptyInput(){
         generateQRCode();
      }
      else{
-         alert("Enter the text or URL to generate your QR code");
+         errorContainer.classList.add('myError')
+         setTimeout(()=>{
+            errorContainer.classList.remove('myError')
+         },1500)
      }
-    //qrText.value.length > 0 ? generateQRCode() : alert("Enter the text or URL to generate your QR code");;
 }
 function generateQRCode(){
     qrContainer.innerHTML = "";

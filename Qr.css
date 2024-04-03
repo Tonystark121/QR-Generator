@@ -98,3 +98,35 @@ body{
         font-size: 16px;
     }
 }
+.error{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 45px;
+    margin: 2rem 3rem;
+    background-color: rgb(248, 141, 141);
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
+    border-radius: 8px;
+    box-shadow:  5px 5px 5px #e8b1b1,
+              5px #fbe1e1;
+    display: none;
+}
+.myError{
+    display: flex;
+    animation: expand 1s forwards
+}
+@keyframes expand{
+    0%{
+      width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+.error i{
+    margin-right: 1rem;
+}
+
